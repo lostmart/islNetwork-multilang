@@ -1,0 +1,16 @@
+{
+	"locale": {
+		"en": "English",
+		"sp": "Spanish"
+	},
+	"nav": {
+		"home": "Home",
+		"about": "About"
+	},
+	"home": {
+		"header": "This is home in Eng!"
+	},
+	"about": {
+		"header": "About us"
+	}
+}

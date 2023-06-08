@@ -1,0 +1,16 @@
+{
+	"locale": {
+		"en": "Inglés",
+		"sp": "Español"
+	},
+	"nav": {
+		"home": "Inicio",
+		"about": "Acerca de"
+	},
+	"home": {
+		"header": "¡Esto es inicio en español!"
+	},
+	"about": {
+		"header": "Acerca de nosotros"
+	}
+}
