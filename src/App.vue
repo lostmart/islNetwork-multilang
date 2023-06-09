@@ -1,9 +1,15 @@
-<script setup></script>
+<script setup>
+ import NavBar from './components/NavBar.vue';
+
+</script>
 <template>
-	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<NavBar />
+	<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
 		<div class="container">
 			<router-link to="/" class="navbar-brand text-white">
-				<img src="./assets/favicon-32x32.png" alt="padrinos sin limites" />
+				<img
+					src="./assets/images/favicon-32x32.png"
+					alt="padrinos sin limites" />
 			</router-link>
 			<button
 				class="navbar-toggler"
@@ -28,13 +34,19 @@
 						>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link text-white" to="/team">EQUIPO</router-link>
+						<router-link class="nav-link text-white" to="/team"
+							>EQUIPO</router-link
+						>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link text-white" to="/faq">PREGUNTAS</router-link>
+						<router-link class="nav-link text-white" to="/faq"
+							>PREGUNTAS</router-link
+						>
 					</li>
 					<li class="nav-item">
-						<router-link class="nav-link text-white" to="/voices">VOCES</router-link>
+						<router-link class="nav-link text-white" to="/voices"
+							>VOCES</router-link
+						>
 					</li>
 					<li class="nav-item">
 						<router-link class="nav-link text-white" to="/materials"
@@ -54,6 +66,6 @@
 			<router-link to="/">Home</router-link>
 			<router-link to="/about">About</router-link>
 		</div>
-	</nav>
+	</nav> -->
 	<router-view></router-view>
 </template>
