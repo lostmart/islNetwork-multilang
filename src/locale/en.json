@@ -11,6 +11,7 @@
 		"description": "Godparents is a <strong>social innovation</strong> project for educational services, run entirely by <strong>volunteers.</strong>There are no paid positions in our organization. Its operation is entirely <strong>virtual.</strong> It provides support to schools in rural communities in Uruguay.<br /> Godparents Project reaches over <strong>4,500</strong> children and adolescents"
 	},
 	"about": {
-		"header": "About us"
+		"title": "About us",
+		"text": "About us"
 	}
 }

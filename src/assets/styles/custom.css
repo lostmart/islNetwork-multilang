@@ -2,6 +2,10 @@
 	--prim-clr: #418bd0;
 }
 
+.main-container {
+	min-height: 56vh;
+}
+
 .container h1 {
 	color: var(--prim-clr);
 	font-family: impact;
@@ -31,4 +35,11 @@ main {
 	--bs-btn-disabled-bg: transparent;
 	--bs-btn-disabled-border-color: #6996c0;
 	--bs-gradient: none;
+}
+
+.card {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-color: #418bd012;
+	box-shadow: 0 13px 15px #30303014, 2px 4px 10px #00000009;
 }
