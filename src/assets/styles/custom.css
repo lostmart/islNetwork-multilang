@@ -37,6 +37,10 @@ main {
 	--bs-gradient: none;
 }
 
+.active {
+	background-color: #306698;
+}
+
 .card {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;

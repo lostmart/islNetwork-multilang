@@ -41,7 +41,7 @@ onMounted(() => {
 		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<h1 class="card-title">Godparents Network Uruguay</h1>
+					<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
 					<div class="col-lg-6">
 						<p v-html="descrption"></p>
 					</div>

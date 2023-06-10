@@ -20,6 +20,9 @@ watch(
 	}
 )
 
+
+
+
 /**
  * Sets the page language based on the value stored in localStorage.
  * If the language is set to 'sp', => Spanish
@@ -28,14 +31,12 @@ watch(
  */
 const setPageLang = () => {
 	if (localStorage.getItem('lang') === 'sp') {
-		NavBar.value.home = "Inicio"
-		NavBar.value.about = "Quiénes somos"
+		NavBar.value.home = spanishTxt.nav.home
+		NavBar.value.about = spanishTxt.nav.about
 	} else if (localStorage.getItem('lang') === 'en') {
 		NavBar.value.home = engTxt.nav.home
 		NavBar.value.about = engTxt.nav.about
 	}
-	console.log(engTxt.nav.home)
-	// log(NavBar)
 }
 
 onMounted(() => {
@@ -55,9 +56,11 @@ onMounted(() => {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<router-link class="nav-link text-white" aria-current="page" to="/">Home </router-link>
+					<router-link class="nav-link text-white" aria-current="page" to="/">{{
+						NavBar.home }}
+					</router-link>
 					<li class="nav-item">
-						<router-link class="nav-link text-white" to="/about">QUIÉNES SOMOS</router-link>
+						<router-link class="nav-link text-white" to="/about">{{ NavBar.about }}</router-link>
 					</li>
 				</ul>
 				<ButtonGroup />

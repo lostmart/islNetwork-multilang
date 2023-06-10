@@ -7,19 +7,19 @@
  * @returns {void}
  */
 const detectLang = () => {
-	const browserLocale = window.navigator.language.split('-')[0]
+	const browserLocale = window.navigator.language.split("-")[0]
 
-	if (localStorage.getItem('lang')) {
-		localStorage.setItem('lang', localStorage.getItem('lang'))
-	} else if (browserLocale === 'en' && !localStorage.getItem('lang')) {
-		localStorage.setItem('lang', 'en')
+	if (localStorage.getItem("lang")) {
+		localStorage.setItem("lang", localStorage.getItem("lang"))
+	} else if (browserLocale === "en" && !localStorage.getItem("lang")) {
+		localStorage.setItem("lang", "en")
 		return
-	} else if (browserLocale === 'es' && !localStorage.getItem('lang')) {
-		localStorage.setItem('lang', 'sp')
+	} else if (browserLocale === "es" && !localStorage.getItem("lang")) {
+		localStorage.setItem("lang", "sp")
 		return
 	}
 
-	console.log(browserLocale)
+	// console.log(browserLocale)
 }
 
 export default detectLang
