@@ -7,8 +7,7 @@ import { useStore } from 'vuex'
 import engTxt from '../locale/en.json'
 import spanishTxt from '../locale/sp.json'
 
-const text = ref("")
-const title = ref('')
+const aboutData = ref({ title: "", firstParagraphs: [] })
 
 const store = useStore()
 
@@ -23,12 +22,11 @@ watch(
 
 const setPageLang = () => {
 	if (localStorage.getItem('lang') === 'sp') {
-		text.value = spanishTxt.about.text
-		title.value = spanishTxt.about.title
+		aboutData.value = spanishTxt.about
+		console.log(aboutData)
 	} else if (localStorage.getItem('lang') === 'en') {
-		text.value = engTxt.about.text
-		title.value = spanishTxt.about.title
-
+		aboutData.value = engTxt.about
+		console.log(aboutData)
 	}
 }
 
@@ -42,8 +40,18 @@ onMounted(() => {
 	<div class="container main-container">
 		<div class="card">
 			<div class="card-body">
-				<h2 class="card-title mt-4">{{ "peliculas" }}</h2>
-				<p class="card-text" v-html="text"></p>
+				<h2 class="card-title mt-4">{{ aboutData.title }}</h2>
+				<p class="card-text" v-for="paragraph in aboutData.firstParagraphs" :key="paragraph" v-html="paragraph"></p>
+
+				<h2 class="card-title mt-4">{{ aboutData.secondTitle }}</h2>
+				<p class="card-text" v-for="paragraph in aboutData.secondParagraphs" :key="paragraph" v-html="paragraph">
+				</p>
+				<img style="max-width: 250px" class="rounded mx-auto d-block"
+					src="../assets/images/organizacion-centrada-en-alumno-islnetwork.jpg"
+					alt="oranizacion centrada en el alumno">
+				<a class="btn btn-primary mt-4 d-block mx-auto w-25"
+					href="https://docs.google.com/forms/d/e/1FAIpQLSfEukFLvxJvAOq7UqLXDBiMVTsljGST9EDPUllONK7Z_JtK6w/viewform?usp=send_form"
+					target="_blank"> {{ aboutData.btnTxt }} </a>
 			</div>
 		</div>
 	</div>
