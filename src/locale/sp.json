@@ -32,5 +32,69 @@
 			"El programa ha demostrado en los cuatros años de desarrollo que los niños de las escuelas rurales aprenden una lengua extranjera con un material de muy buena calidad y docentes profesionales motivados y motivadores."
 		],
 		"btnTxt": "Unite"
+	},
+	"team": {
+		"title": "Nuestro equipo",
+		"coordination": {
+			"subtitle": "Coordinacion",
+			"userName": "Prof. Laura Motta",
+			"description": "Departamentos de Soriano, Salto, Artigas, Rivera, Tacuarembó, Cerro Largo, Treinta y Tres",
+			"linkedIn": "",
+			"imgUrl": ""
+		},
+		"referents": {
+			"subtitle": "Referentes",
+			"members": [
+				{
+					"userName": "Julio Barreiro",
+					"description": "Departamentos de Flores y Lavalleja",
+					"linkedIn": null,
+					"imgUrl": ""
+				},
+				{
+					"userName": "Cecilia Cabrera",
+					"description": "Departamento de Florida y Durazno",
+					"linkedIn": "https://www.linkedin.com/in/ceciliacabreramartirena/",
+					"imgUrl": ""
+				},
+				{
+					"userName": "Maria Elena Schnyder",
+					"description": "Departamento de Colonia y San José",
+					"linkedIn": "https://www.linkedin.com/in/mar%C3%ADa-elena-schnyder-33b98362/",
+					"imgUrl": ""
+				},
+				{
+					"userName": "Virginia Frade",
+					"description": "Departamento de Maldonado",
+					"linkedIn": null,
+					"imgUrl": ""
+				}
+			],
+			"team": {
+				"subtitle": "Equipo de enlace ISL",
+				"members": [
+					{
+						"userName": "Dr. Aldo Rodriguez",
+						"linkedIn": "https://www.linkedin.com/in/aldo-rodriguez-45515937",
+						"imgUrl": ""
+					},
+					{
+						"userName": "Prof. Florencia Perez",
+						"linkedIn": "https://www.linkedin.com/in/mar%C3%ADa-florencia-p%C3%A9rez-784134216/",
+						"imgUrl": ""
+					},
+					{
+						"userName": "Mta. Valentina Alpuin",
+						"linkedIn": "https://www.linkedin.com/in/valentinaalpuin/",
+						"imgUrl": ""
+					},
+					{
+						"userName": "Prof. Valentina Dubini",
+						"linkedIn": "https://www.linkedin.com/in/valentinadubini/",
+						"imgUrl": ""
+					}
+				]
+			}
+		}
 	}
 }
