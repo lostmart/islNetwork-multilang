@@ -5,7 +5,12 @@
 	},
 	"nav": {
 		"home": "Inicio",
-		"about": "Quiénes comos"
+		"about": "Quiénes somos",
+		"team": "Equipo",
+		"faq": "Preguntas",
+		"voices": "Voces",
+		"materials": "Materiales",
+		"contact": "Contacto"
 	},
 	"home": {
 		"description": "Godparents es un proyecto de <strong>innovación social</strong> de servicios educativos,  llevado a cabo por <strong>voluntarios</strong>, no hay cargos pagos en nuestra organización. Su funcionamiento es enteramente <strong>virtual.</strong> Brinda apoyo a las escuelas de las comunidades rurales de Uruguay y alcanza a más de    <strong>4.500</strong> niños y niñas."
