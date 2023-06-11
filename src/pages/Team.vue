@@ -1,5 +1,7 @@
 <script setup></script>
 
 <template>
-    <h2>This is team</h2>
+	<div>
+		<h2>he hi !</h2>
+	</div>
 </template>

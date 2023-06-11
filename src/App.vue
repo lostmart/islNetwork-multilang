@@ -19,6 +19,13 @@ onMounted(() => {
 </script>
 <template>
 	<NavBar />
-	<router-view></router-view>
+	<div class="container main-container">
+		<div class="card">
+			<div class="card-body">
+                <router-view></router-view>
+            </div>
+		</div>
+	</div>
+	
 	<FooterComp />
 </template>
