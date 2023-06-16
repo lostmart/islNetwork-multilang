@@ -39,7 +39,7 @@ console.log(props)
 
 <template>
 	<div class="p-3 mx-auto" style="max-width: 320px">
-		<img v-if="props.imgUrl" :src="`src/assets/images/team-members/${imgUrl}`" :alt="props.title" />
+		<img v-if="props.imgUrl" :src="`../assets/images/team-members/${imgUrl}`" :alt="props.title" />
 
 		<img v-else src="../assets/images/team-members/null-member-2.png" :alt="props.title" />
 
