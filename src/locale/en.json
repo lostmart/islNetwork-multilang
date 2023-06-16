@@ -38,6 +38,14 @@
 		"btnTxt": "Join Us"
 	},
 	"team": {
-		"title": "Our team"
+		"title": "Our Team",
+		"teamMembers": [
+			{
+				"userName": "Julio Barreiro",
+				"description": "Departamentos de Flores y Lavalleja",
+				"linkedIn": null,
+				"imgUrl": ""
+			}
+		]
 	}
 }

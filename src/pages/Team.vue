@@ -2,21 +2,53 @@
 	import { ref, onMounted, watch } from 'vue'
 	import { useStore } from 'vuex'
 
+	import TeamMember from '../components/TeamMember.vue'
+
 	/*  locales  */
 	import engTxt from '../locale/en.json'
 	import spanishTxt from '../locale/sp.json'
 
 	const store = useStore()
-	const teamData = ref({ title: '', subTitle: '', paragraphs: [] })
+	const teamData = ref({ title: '', teamMembers: [] })
+
+	// Watch for changes in the store state siteLang
+	watch(
+		() => store.state.siteLang,
+		() => {
+			setPageLang()
+		}
+	)
+
+	/**
+	 * Sets the page language based on the value stored in localStorage.
+	 * If the language is set to 'sp', => Spanish
+	 * If the language is set to 'en', => English
+	 * @returns {void}
+	 */
+	const setPageLang = () => {
+		if (localStorage.getItem('lang') === 'sp') {
+			teamData.value = spanishTxt.team
+		} else if (localStorage.getItem('lang') === 'en') {
+			teamData.value = engTxt.team
+		}
+	}
+
+	onMounted(() => {
+		setPageLang()
+	})
 </script>
 
 <template>
-	<div>
-		<h2 class="card-title mt-4">Nuestro equipo</h2>
-		<h3 class="card-title text-center">COORDINACIÓN</h3>
-		<img
-			class="img-laura img-thumbnail"
-			src="../assets/images/laura-motta.jpg"
-			alt="Laura Motta coordinadora" />
+	<div class="row container">
+		<h2 class="card-title mt-4">{{ teamData.title }}</h2>
+		<div class="col-md-6 col-lg-4" v-for="member in teamData.teamMembers">
+			<TeamMember
+				class="m-4"
+				:title="member.userName"
+				:description="member.description"
+				:imgUrl="member.imgUrl"
+				:linkedIn="member.linkedIn"
+				:role="member.rol" />
+		</div>
 	</div>
 </template>

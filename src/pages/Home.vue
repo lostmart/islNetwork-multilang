@@ -7,6 +7,7 @@
 	import spanishTxt from '../locale/sp.json'
 
 	const descrption = ref(null)
+	const btnTxt = ref(null)
 	const store = useStore()
 
 	// Watch for changes in the store state siteLang
@@ -26,8 +27,10 @@
 	const setPageLang = () => {
 		if (localStorage.getItem('lang') === 'sp') {
 			descrption.value = spanishTxt.home.description
+			btnTxt.value = spanishTxt.about.btnTxt
 		} else if (localStorage.getItem('lang') === 'en') {
 			descrption.value = engTxt.home.description
+			btnTxt.value = engTxt.about.btnTxt
 		}
 	}
 
@@ -41,6 +44,12 @@
 		<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
 		<div class="col-lg-6">
 			<p v-html="descrption"></p>
+			<a
+				class="btn btn-primary m-4 d-block mx-auto w-25"
+				href="https://docs.google.com/forms/d/e/1FAIpQLSfEukFLvxJvAOq7UqLXDBiMVTsljGST9EDPUllONK7Z_JtK6w/viewform?usp=send_form"
+				target="_blank">
+				{{ btnTxt }}
+			</a>
 		</div>
 		<div class="col-lg-6 col-md-12 d-flex align-items-center">
 			<img
