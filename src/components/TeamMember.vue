@@ -36,7 +36,7 @@
 </script>
 
 <template>
-	<div class="p-3 mx-auto" style="max-width: 320px">
+	<div class="px-1 py-3 mx-auto" style="max-width: 320px">
 		<img v-if="props.imgUrl" :src="'/team/' + imgUrl" :alt="props.title" />
 
 		<img

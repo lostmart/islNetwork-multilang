@@ -11,8 +11,9 @@
 	font-family: impact;
 }
 
-main {
-	min-height: 70vh !important;
+
+.card {
+	min-height: 74vh;
 }
 
 /*   buttons  */

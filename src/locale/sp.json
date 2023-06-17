@@ -99,5 +99,9 @@
 				"rol": "referent"
 			}
 		]
+	},
+	"materials": {
+		"title": "Materiales",
+		"subTitle": "Contenido exclusivo para godparents"
 	}
 }

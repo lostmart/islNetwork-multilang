@@ -68,9 +68,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<router-link class="nav-link text-white" aria-current="page" to="/"
-						>{{ NavBarData.home }}
-					</router-link>
+					<li class="nav-item">
+						<router-link class="nav-link text-white" aria-current="page" to="/"
+							>{{ NavBarData.home }}
+						</router-link>
+					</li>
 					<li class="nav-item">
 						<router-link class="nav-link text-white" to="/about">{{
 							NavBarData.about
@@ -86,7 +88,7 @@
 							NavBarData.faq
 						}}</router-link>
 					</li>
-					<li class="nav-item">
+					<li v-if="NavBarData.voices" class="nav-item">
 						<router-link class="nav-link text-white" to="/voices">{{
 							NavBarData.voices
 						}}</router-link>

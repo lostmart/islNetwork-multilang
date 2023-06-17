@@ -45,7 +45,7 @@
 		<div class="col-lg-6">
 			<p v-html="descrption"></p>
 			<a
-				class="btn btn-primary m-4 d-block mx-auto w-25"
+				class="btn btn-lg btn-primary my-5 d-block mx-auto w-50"
 				href="https://docs.google.com/forms/d/e/1FAIpQLSfEukFLvxJvAOq7UqLXDBiMVTsljGST9EDPUllONK7Z_JtK6w/viewform?usp=send_form"
 				target="_blank">
 				{{ btnTxt }}
@@ -89,5 +89,9 @@
 		.card .card-title {
 			font-size: 2.9rem;
 		}
+	}
+
+	.btn-primary {
+		min-width: fit-content;
 	}
 </style>
