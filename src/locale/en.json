@@ -48,55 +48,55 @@
 			},
 			{
 				"userName": "Dr. Aldo Rodriguez",
-				"description": "Parte del hermoso departamento de ISL Network",
+				"description": "Director of Linguistic Policies",
 				"linkedIn": "https://www.linkedin.com/in/aldo-rodriguez-45515937",
 				"imgUrl": "aldo-rodriguez.jpg",
 				"rol": "islTeam"
 			},
 			{
 				"userName": "Prof. Florencia Perez",
-				"description": "Parte del hermoso departamento de ISL Network",
+				"description": "Inglés sin Límites team",
 				"linkedIn": "https://www.linkedin.com/in/mar%C3%ADa-florencia-p%C3%A9rez-784134216/",
 				"imgUrl": "florencia-perez.jpg",
 				"rol": "islTeam"
 			},
 			{
 				"userName": "Mta. Valentina Alpuin",
-				"description": "Parte del hermoso departamento de ISL Network",
+				"description": "Inglés sin Límites team",
 				"linkedIn": "https://www.linkedin.com/in/valentinaalpuin/",
 				"imgUrl": "valentina-alpuin.jpg",
 				"rol": "islTeam"
 			},
 			{
 				"userName": "Prof. Valentina Dubini",
-				"description": "Parte del hermoso departamento de ISL Network",
+				"description": "Inglés sin Límites team",
 				"linkedIn": "https://www.linkedin.com/in/valentinadubini/",
 				"imgUrl": "vale-dubini.jpg",
 				"rol": "islTeam"
 			},
 			{
 				"userName": "Julio Barreiro",
-				"description": "Departamentos de Flores y Lavalleja",
+				"description": "Flores y Lavalleja reference",
 				"linkedIn": null,
 				"rol": "referent"
 			},
 			{
 				"userName": "Maria Elena Schnyder",
-				"description": "Departamento de Colonia y San José",
+				"description": "Colonia and San José reference",
 				"linkedIn": "https://www.linkedin.com/in/mar%C3%ADa-elena-schnyder-33b98362/",
 				"imgUrl": "ma-elena-schnyder.jpg",
 				"rol": "referent"
 			},
 			{
 				"userName": "Virginia Frade",
-				"description": "Departamento de Maldonado",
+				"description": "Maldonado reference",
 				"linkedIn": null,
 				"imgUrl": "",
 				"rol": "referent"
 			},
 			{
 				"userName": "Cecilia Cabrera Frade",
-				"description": "Departamento de Florida y Durazno",
+				"description": "Florida and Durazno reference",
 				"linkedIn": "https://www.linkedin.com/in/ceciliacabreramartirena/",
 				"imgUrl": "cecilia-cabrera.jpg",
 				"rol": "referent"
