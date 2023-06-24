@@ -51,8 +51,17 @@
 				:description="member.description"
 				:imgUrl="member.imgUrl"
 				:linkedIn="member.linkedIn"
-				:rol="member.rol" 
-				:order="indx+1"/>
+				:rol="member.rol"
+				:order="indx + 1" />
+		</div>
+		<div class="legend-titles">
+			<span><strong>Legenda: </strong> </span>
+			<div class="coord"></div>
+			Cordinación |
+			<div class="team"></div>
+			Equipo ISL |
+			<div class="reference"></div>
+			Referente
 		</div>
 	</div>
 </template>
@@ -90,5 +99,27 @@
 		100% {
 			transform: scale(1);
 		}
+	}
+
+	.legend-titles {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		flex-wrap: wrap;
+	}
+	.legend-titles div {
+		height: 20px;
+		width: 20px;
+	}
+	.coord {
+		background-color: rgb(48 102 152 / 70%);
+	}
+
+	.team {
+		background-color: rgb(237 143 21 / 60%);
+	}
+
+	.reference {
+		background-color: rgb(21 154 73 / 50%);
 	}
 </style>
