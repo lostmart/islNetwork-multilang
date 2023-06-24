@@ -43,15 +43,52 @@
 		<h2 class="card-title text-center mt-4">{{ teamData.title }}</h2>
 		<div
 			class="col-md-6 col-lg-4"
-			v-for="member in teamData.teamMembers"
+			v-for="(member, indx) in teamData.teamMembers"
 			:key="member.userName">
 			<TeamMember
-				class="m-4"
+				class="m-4 card-enter"
 				:title="member.userName"
 				:description="member.description"
 				:imgUrl="member.imgUrl"
 				:linkedIn="member.linkedIn"
-				:rol="member.rol" />
+				:rol="member.rol" 
+				:order="indx+1"/>
 		</div>
 	</div>
 </template>
+
+<style>
+	.card-title {
+		animation-name: titleAnim;
+		animation-duration: 900ms;
+		animation-iteration-count: 1;
+		position: relative;
+		animation-timing-function: ease-in;
+	}
+	.card-enter {
+		animation-name: cardEnter;
+		animation-duration: 1.4s;
+		animation-iteration-count: 1;
+		position: relative;
+	}
+
+	@keyframes cardEnter {
+		0% {
+			top: 100px;
+			opacity: 0;
+		}
+		100% {
+			top: 0px;
+		}
+	}
+
+	@keyframes titleAnim {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+</style>

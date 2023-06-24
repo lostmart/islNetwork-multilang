@@ -1,5 +1,5 @@
 <script setup>
-	import { defineProps, reactive, computed, ref } from 'vue'
+	import { defineProps, reactive, computed, ref, onMounted } from 'vue'
 
 	import LinkedInIcon from './LinkedInIcon.vue'
 	// Props declaration
@@ -10,7 +10,6 @@
 		},
 		description: {
 			type: String,
-			default: 'Hello, World!',
 		},
 		imgUrl: {
 			type: String,
@@ -21,6 +20,18 @@
 		rol: {
 			type: String,
 		},
+		order: {
+			type: Number,
+			default: 1,
+		},
+	})
+
+	const legendery = ref(null)
+
+	onMounted(() => {
+		setTimeout(() => {
+			legendery.value.classList.remove('op-none')
+		}, 1200)
 	})
 
 	const reactiveProps = reactive(props)
@@ -31,12 +42,10 @@
 		'legend-team': props.rol === 'islTeam',
 		'legend-ref': props.rol === 'referent',
 	}))
-
-	console.log(props)
 </script>
 
 <template>
-	<div class="px-1 py-3 mx-auto" style="max-width: 320px">
+	<article class="px-1 py-3 mx-auto card-enter" style="max-width: 320px">
 		<img v-if="props.imgUrl" :src="'/team/' + imgUrl" :alt="props.title" />
 
 		<img
@@ -44,7 +53,11 @@
 			src="../assets/images/team-members/null-member-2.png"
 			:alt="props.title" />
 
-		<div class="text-center py-1 legend" :class="laberlColor">
+		<div
+			class="text-center py-1 legend op-none"
+			ref="legendery"
+			:style="`--order: ${order}`"
+			:class="laberlColor">
 			<h5 class="me-2 text-uppercase">
 				{{ title }}
 
@@ -57,10 +70,13 @@
 			</h5>
 			<h6 class="px-2">{{ description }}</h6>
 		</div>
-	</div>
+	</article>
 </template>
 
-<style scoped>
+<style>
+	.op-none {
+		opacity: 0;
+	}
 	h5 {
 		text-shadow: 0px 1px 1px #ffffff7d;
 		font-size: 1em;
@@ -103,7 +119,13 @@
 		min-width: 225px;
 		width: 85%;
 		margin: -40px auto 0 auto;
+		position: relative;
 		box-shadow: 0 4px 4px #00000017, 1px 7px 27px #0000001a;
+
+		animation-name: legendAnim;
+		animation-duration: 2s;
+		animation-iteration-count: 1;
+		animation-delay: calc(var(--order) * 120ms);
 	}
 
 	p {
@@ -150,5 +172,21 @@
 
 	.legend-ref:after {
 		background-color: rgb(21 154 73 / 50%);
+	}
+
+	@keyframes legendAnim {
+		0% {
+			opacity: 0;
+			transform: translateY(40%);
+		}
+		25% {
+			opacity: 0;
+			transform: translateY(40%);
+		}
+		70%,
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 </style>
