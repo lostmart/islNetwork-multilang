@@ -108,6 +108,10 @@
 						title: 'Youtube playlist',
 						link: 'https://www.youtube.com/playlist?list=PLtupDLnojS6s_LeuiI141CCc8fctt1fgZ',
 					},
+					{
+						title: 'Otros / Misc',
+						link: 'https://drive.google.com/drive/folders/1q38CqBHNcmWGmfHCpgXHYWIfWtfFnlhH',
+					},
 				],
 				cogin: 'Gdp2019',
 				show: false,
