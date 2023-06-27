@@ -40,7 +40,6 @@
 		} else if (localStorage.getItem('lang') === 'en') {
 			NavBarData.value = engTxt.nav
 		}
-		console.log(NavBarData.value.home)
 	}
 
 	onMounted(() => {
@@ -88,8 +87,13 @@
 							NavBarData.faq
 						}}</router-link>
 					</li>
-					<li v-if="NavBarData.voices" class="nav-item">
+					<li v-if="store.state.siteLang === 'sp'" class="nav-item">
 						<router-link class="nav-link text-white" to="/voices">{{
+							NavBarData.voices
+						}}</router-link>
+					</li>
+					<li v-else class="nav-item">
+						<router-link class="nav-link text-white" to="/voices-en">{{
 							NavBarData.voices
 						}}</router-link>
 					</li>

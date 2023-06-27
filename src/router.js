@@ -8,6 +8,7 @@ const Faq = () => import('./pages/Faq.vue')
 const Materials = () => import('./pages/Materials.vue')
 const Team = () => import('./pages/Team.vue')
 const Voices = () => import('./pages/Voices.vue')
+const VoicesEn = () => import('./pages/Voices-en.vue')
 const NotFound = () => import('./pages/NotFound.vue')
 
 const router = createRouter({
@@ -42,6 +43,11 @@ const router = createRouter({
 			path: '/voices',
 			name: 'Voices',
 			component: Voices,
+		},
+		{
+			path: '/voices-en',
+			name: 'Voices-en',
+			component: VoicesEn,
 		},
 		{
 			path: '/:catchAll(.*)',
