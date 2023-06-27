@@ -52,7 +52,7 @@
 		<div class="container">
 			<router-link to="/" class="navbar-brand text-white">
 				<img
-					src="../assets/images/favicon-32x32.png"
+					src="../assets/images/godparents-logo.png"
 					alt="padrinos sin limites" />
 			</router-link>
 			<button
@@ -115,3 +115,9 @@
 		</div>
 	</nav>
 </template>
+
+<style scoped>
+	img {
+		width: 42px;
+	}
+</style>
