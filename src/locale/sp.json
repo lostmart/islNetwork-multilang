@@ -75,6 +75,7 @@
 				"userName": "Julio Barreiro",
 				"description": "Referente de los departamentos de Flores y Lavalleja",
 				"linkedIn": null,
+				"imgUrl": "julio-barreiro.jpeg",
 				"rol": "referent"
 			},
 			{
@@ -88,7 +89,7 @@
 				"userName": "Virginia Frade",
 				"description": "Referente del departamento de Maldonado",
 				"linkedIn": null,
-				"imgUrl": "",
+				"imgUrl": "Virginia-Frade.jpg",
 				"rol": "referent"
 			},
 			{

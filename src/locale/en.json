@@ -42,7 +42,7 @@
 		"teamMembers": [
 			{
 				"userName": "Prof. Laura Motta",
-				"description": "Coordinación y referente en los departamentos de Flores y Lavalleja",
+				"description": "Coordination and reference in the departments of Flores and Lavalleja",
 				"linkedIn": "https://www.linkedin.com/in/laura-motta-524a4a24/",
 				"imgUrl": "laura-motta.jpg",
 				"rol": "coordination"
@@ -79,6 +79,7 @@
 				"userName": "Julio Barreiro",
 				"description": "Flores y Lavalleja reference",
 				"linkedIn": null,
+				"imgUrl": "julio-barreiro.jpeg",
 				"rol": "referent"
 			},
 			{
@@ -92,7 +93,7 @@
 				"userName": "Virginia Frade",
 				"description": "Maldonado reference",
 				"linkedIn": null,
-				"imgUrl": "",
+				"imgUrl": "Virginia-Frade.jpg",
 				"rol": "referent"
 			},
 			{
