@@ -88,8 +88,12 @@ li {
 	list-style-type: none;
 }
 
-li{
-	margin-bottom: .3em;
+li {
+	margin-bottom: 0.25em;
+	width: fit-content;
+	background: #cc00002b;
+	padding: 2px 10px;
+	border-radius: 3px;
 }
 
 img {
