@@ -48,11 +48,13 @@
 
 			</li>
 		</ul>
+		<p class="text-center">Inglés Sin Límites &copy; 2024</p>
 	</footer>
 </template>
 
 <style scoped>
-a {
+a,
+p {
 	text-decoration: none;
 	color: white;
 }
@@ -91,7 +93,7 @@ li {
 li {
 	margin-bottom: 0.25em;
 	width: fit-content;
-	background: #cc00002b;
+	background: #524d4d2b;
 	padding: 2px 10px;
 	border-radius: 3px;
 }
@@ -108,6 +110,13 @@ img {
 
 .social_links {
 	padding: 1.5rem 1rem;
-	margin-top: 2.7em;
+	margin-top: 3.7em;
+	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 600px) {
+	.social_links {
+		margin-top: 5.7em;
+	}
 }
 </style>
