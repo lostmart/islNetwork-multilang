@@ -34,7 +34,7 @@ async function fetchSinglePost(POST_URL) {
     loading.value = true
     try {
         const res = await fetch(POST_URL);
-        console.log(res.status);
+        // console.log(res.status);
         if(res.status === 404){
             error.value = "Post not found..."
             throw new Error("Post not found...");
@@ -45,7 +45,7 @@ async function fetchSinglePost(POST_URL) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
-        
+        // console.log(data);
         postData.value = data
         loading.value = false
         formatDate(data.date)
@@ -74,7 +74,7 @@ async function bringFeatured_media(dataUrl){
         }
         const mediaData = await mediaRes.json()
         featuredMedia.value = mediaData.source_url
-        // console.log(mediaData.source_url)
+        console.log(mediaData.source_url)
     }catch (error) {
         console.error('Error fetching media:', error);
 
@@ -103,7 +103,7 @@ onMounted(()=>{
     </div>
     <article v-if="postData" class="m-2 p-2">        
         <figure>
-            <img src="/team/placeholder-image.webp" :alt="postData.title.rendered">
+            <img :src="featuredMedia" :alt="postData.title.rendered">
             <figcaption>
                 <h2>{{ postData.title.rendered }}</h2>
             </figcaption>
