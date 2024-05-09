@@ -18,6 +18,7 @@ const NavBarData = ref({
 	voices: '',
 	materials: '',
 	contact: '',
+	blog:''
 })
 
 // Watch for changes in the store state siteLang
@@ -95,6 +96,9 @@ onMounted(() => {
 					</li>
 					<li class="nav-item">
 						<a class="nav-link text-white" href="mailto: ruralgodparents@gmail.com">{{ NavBarData.contact }}</a>
+					</li>
+					<li class="nav-item">
+					<router-link class="nav-link text-white" to="/blog">Blog</router-link>
 					</li>
 				</ul>
 				<ButtonGroup />

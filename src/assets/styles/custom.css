@@ -1,5 +1,7 @@
 :root {
 	--prim-clr: #418bd0;
+	--accent: #ed8f15;
+	--accent-two: #159a49;
 }
 
 .main-container {
@@ -10,7 +12,6 @@
 	color: var(--prim-clr);
 	font-family: impact;
 }
-
 
 .card {
 	min-height: 74vh;
@@ -64,4 +65,40 @@
 	border-top-right-radius: 0;
 	border-color: #418bd012;
 	box-shadow: 0 13px 15px #30303014, 2px 4px 10px #00000009;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.has-custom-primary-color {
+	color: var(--prim-clr) !important;
+}
+
+.has-accent-2-color {
+	color: var(--accent-two) !important;
+}
+
+.has-accent-3-color {
+	color: var(--accent) !important;
+}
+
+.has-large-font-size {
+	font-size: 1.8em;
+}
+
+.has-x-large-font-size {
+	font-size: 2.4em;
+}
+
+.has-xx-large-font-size {
+	font-size: 2.8em;
+}
+
+.wp-block-image img {
+	max-width: 490px;
+	display: block;
+	margin: auto;
+	width: 100%;
 }

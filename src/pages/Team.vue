@@ -57,7 +57,7 @@ onMounted(() => {
 	</div>
 </template>
 
-<style>
+<style scoped>
 img {
 	max-height: 265px;
 	object-fit: contain;
