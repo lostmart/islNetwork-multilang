@@ -8,6 +8,7 @@ import spanishTxt from '../locale/sp.json'
 
 const descrption = ref(null)
 const btnTxt = ref(null)
+const donateBtnTxt = ref(null)
 const store = useStore()
 
 // Watch for changes in the store state siteLang
@@ -28,9 +29,11 @@ const setPageLang = () => {
 	if (localStorage.getItem('lang') === 'sp') {
 		descrption.value = spanishTxt.home.description
 		btnTxt.value = spanishTxt.about.btnTxt
+		donateBtnTxt.value = spanishTxt.home.donateBtn
 	} else if (localStorage.getItem('lang') === 'en') {
 		descrption.value = engTxt.home.description
 		btnTxt.value = engTxt.about.btnTxt
+		donateBtnTxt.value = engTxt.home.donateBtn
 	}
 }
 
@@ -48,6 +51,10 @@ onMounted(() => {
 				href="https://docs.google.com/forms/d/e/1FAIpQLSdHT9xyAjARvHGzuRILp1AfS8vUe7sOHy_h68XvaOuoNHrR8g/viewform"
 				target="_blank">
 				{{ btnTxt }}
+			</a>
+			<a class="btn btn-lg btn-success my-5 d-block mx-auto w-50" href="https://gofund.me/8926b9c2"
+				target="_blank">
+				{{ donateBtnTxt }}
 			</a>
 		</div>
 		<div class="col-lg-6 col-md-12 d-flex align-items-center">
