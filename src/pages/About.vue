@@ -1,61 +1,55 @@
 <script setup>
-	import { ref, onMounted, watch } from 'vue'
-	import { useStore } from 'vuex'
+import { ref, onMounted, watch } from 'vue'
+import { useStore } from 'vuex'
 
-	/*  locales  */
-	import engTxt from '../locale/en.json'
-	import spanishTxt from '../locale/sp.json'
+/*  locales  */
+import engTxt from '../locale/en.json'
+import spanishTxt from '../locale/sp.json'
 
-	const aboutData = ref({ title: '', firstParagraphs: [] })
+const aboutData = ref({ title: '', firstParagraphs: [] })
+const donateBtnTxt = ref(null)
 
-	const store = useStore()
+const store = useStore()
 
-	// Watch for changes in the store state siteLang
-	watch(
-		() => store.state.siteLang,
-		() => {
-			setPageLang()
-		}
-	)
-
-	const setPageLang = () => {
-		if (localStorage.getItem('lang') === 'sp') {
-			aboutData.value = spanishTxt.about
-			console.log(aboutData)
-		} else if (localStorage.getItem('lang') === 'en') {
-			aboutData.value = engTxt.about
-			console.log(aboutData)
-		}
-	}
-
-	onMounted(() => {
+// Watch for changes in the store state siteLang
+watch(
+	() => store.state.siteLang,
+	() => {
 		setPageLang()
-	})
+	}
+)
+
+const setPageLang = () => {
+	if (localStorage.getItem('lang') === 'sp') {
+		aboutData.value = spanishTxt.about
+		donateBtnTxt.value = spanishTxt.home.donateBtn
+		// console.log(aboutData)
+	} else if (localStorage.getItem('lang') === 'en') {
+		aboutData.value = engTxt.about
+		donateBtnTxt.value = engTxt.home.donateBtn
+		// console.log(aboutData)
+	}
+}
+
+onMounted(() => {
+	setPageLang()
+})
 </script>
 
 <template>
 	<h2 class="card-title mt-4">{{ aboutData.title }}</h2>
-	<p
-		class="card-text"
-		v-for="paragraph in aboutData.firstParagraphs"
-		:key="paragraph"
-		v-html="paragraph"></p>
+	<p class="card-text" v-for="paragraph in aboutData.firstParagraphs" :key="paragraph" v-html="paragraph"></p>
 
 	<h2 class="card-title mt-4">{{ aboutData.secondTitle }}</h2>
-	<p
-		class="card-text"
-		v-for="paragraph in aboutData.secondParagraphs"
-		:key="paragraph"
-		v-html="paragraph"></p>
-	<img
-		style="max-width: 250px"
-		class="rounded mx-auto d-block"
-		src="../assets/images/organizacion-centrada-en-alumno-islnetwork.jpg"
-		alt="oranizacion centrada en el alumno" />
-	<a
-		class="btn btn-lg btn-primary mt-4 d-block mx-auto w-50"
+	<p class="card-text" v-for="paragraph in aboutData.secondParagraphs" :key="paragraph" v-html="paragraph"></p>
+	<img style="max-width: 250px" class="rounded mx-auto d-block"
+		src="../assets/images/organizacion-centrada-en-alumno-islnetwork.jpg" alt="oranizacion centrada en el alumno" />
+	<a class="btn btn-lg btn-primary mt-4 d-block mx-auto w-50"
 		href="https://docs.google.com/forms/d/e/1FAIpQLSfEukFLvxJvAOq7UqLXDBiMVTsljGST9EDPUllONK7Z_JtK6w/viewform?usp=send_form"
 		target="_blank">
 		{{ aboutData.btnTxt }}
+	</a>
+	<a class="btn btn-lg btn-success mt-4 d-block mx-auto w-50" href="https://gofund.me/8926b9c2" target="_blank">
+		{{ donateBtnTxt }}
 	</a>
 </template>
