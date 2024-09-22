@@ -1,12 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useStore } from 'vuex'
 
 // const POSTS_URL = "http://localhost:10070/wp-json/wp/v2/posts";
 
-const POSTS_URL = "https://islbackoffice.devmartin.site/wp-json/wp/v2/posts"
 
 
+const store = useStore()
 
+const POSTS_URL = ref("")
 const loading = ref(false)
 const error = ref(false)
 
@@ -16,7 +18,7 @@ const postsArray = ref([])
 async function fetchPosts() {
     loading.value = true
     try {
-        const res = await fetch(POSTS_URL)
+        const res = await fetch(POSTS_URL.value)
         if (!res.ok) {
             error.value = true
             loading.value = false
@@ -25,6 +27,8 @@ async function fetchPosts() {
         const data = await res.json()
 
         // console.log(data[0].title);
+        console.log(data)
+
         postsArray.value = data
         error.value = false
         loading.value = false
@@ -55,6 +59,7 @@ async function bringmedia(dataUrl, index) {
         }
         const mediaData = await mediaRes.json()
         postsArray.value[index].mainPhoto = mediaData.source_url
+        error.value = null
         // mediaArray.value.push(mediaData.source_url)
         // console.log(mediaData)
     } catch (error) {
@@ -64,9 +69,27 @@ async function bringmedia(dataUrl, index) {
     }
 }
 
+const setPageLang = (callback) => {
+    if (localStorage.getItem('lang') === 'sp') {
+        POSTS_URL.value = `https://islbackoffice.devmartin.site/wp-json/wp/v2/posts?categories=7`
+    } else {
+        POSTS_URL.value = `https://islbackoffice.devmartin.site/wp-json/wp/v2/posts?categories=8`
+    }
+    callback()
+}
+
+// Watch for changes in the store state siteLang
+watch(
+    () => store.state.siteLang,
+    () => {
+        setPageLang(fetchPosts)
+    }
+)
+
 
 onMounted(() => {
-    fetchPosts()
+    setPageLang(fetchPosts)
+    //fetchPosts()
 }
 )
 
