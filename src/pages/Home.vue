@@ -57,8 +57,10 @@ onMounted(() => {
 				{{ donateBtnTxt }}
 			</a>
 		</div>
-		<div class="col-lg-6 col-md-12 d-flex align-items-center">
+		<div class="col-lg-6 col-md-12 d-flex align-items-center flex-column">
 			<img src="../assets/images/Distribucion-mundial-2024.png" alt="godparents around the world" />
+			<img class="m-4 kaplan-logo" src="../assets/images//Kaplan-International-Languages-Logo.png"
+				alt="godparents around the world" />
 		</div>
 	</div>
 </template>
@@ -66,6 +68,10 @@ onMounted(() => {
 <style scoped>
 img {
 	width: 100%;
+}
+
+.kaplan-logo {
+	max-width: 260px;
 }
 
 .card {
