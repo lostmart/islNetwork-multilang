@@ -59,13 +59,22 @@ onMounted(() => {
 		</div>
 		<div class="col-lg-6 col-md-12 d-flex align-items-center flex-column">
 			<img src="../assets/images/Distribucion-mundial-2024.png" alt="godparents around the world" />
-			<img class="m-4 kaplan-logo" src="../assets/images//Kaplan-International-Languages-Logo.png"
-				alt="godparents around the world" />
+			<figure class="d-flex flex-column align-items-center m-2">
+				<figcaption>In partnership with</figcaption>
+				<img class="kaplan-logo" src="../assets/images//Kaplan-International-Languages-Logo.png"
+					alt="kaplan logo" />
+			</figure>
 		</div>
 	</div>
 </template>
 
 <style scoped>
+figcaption {
+	font-family: system-ui;
+	color: #240f6e;
+	font-size: .8em;
+}
+
 img {
 	width: 100%;
 }
