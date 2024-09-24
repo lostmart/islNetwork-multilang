@@ -22,10 +22,16 @@ onMounted(() => {
 	<div class="container main-container">
 		<div class="card">
 			<div class="card-body">
-                <router-view></router-view>
-            </div>
+				<router-view></router-view>
+			</div>
 		</div>
 	</div>
-	
+
 	<FooterComp />
 </template>
+
+<style scoped>
+.main-container {
+	margin-top: 58px;
+}
+</style>
