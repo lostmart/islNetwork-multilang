@@ -99,6 +99,14 @@ export default {
 				{
 					title: 'Material de Teatro',
 					link: 'https://drive.google.com/drive/folders/11Boynko1i_awmNOWfoahLERCmAatkkJH?usp=sharing'
+				},
+				{
+					title: 'Reunión sobre prueba adaptativa de inglés',
+					link: 'https://uic.zoom.us/rec/share/Gy_uPEFWO7_w-id8xE8-bLDLop-BSeO2yQFqKoQc6XJWkOK5jmqoXsOSktXKYvR0.iBgw2Bsas5e0vfWv'
+				},
+				{
+					title: 'Mock de prueba adaptativa de inglés',
+					link: 'https://drive.google.com/file/d/1sp8ZLhG8BSKDpWUEP85RwRA1FsGSf_jz/view?usp=sharing'
 				}
 			],
 			cogin: 'Gdp2019',
