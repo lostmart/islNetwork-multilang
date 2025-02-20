@@ -48,7 +48,7 @@ onMounted(() => {
 		<div class="col-lg-6">
 			<p v-html="descrption"></p>
 			<a class="btn btn-lg btn-primary my-5 d-block mx-auto w-50"
-				href="https://docs.google.com/forms/d/e/1FAIpQLSdHT9xyAjARvHGzuRILp1AfS8vUe7sOHy_h68XvaOuoNHrR8g/viewform"
+				href="https://docs.google.com/forms/d/e/1FAIpQLSe8VSDWwS83qQBVjqY9t1pLzoggbC82IVRagmmxk4km_aaEDg/viewform"
 				target="_blank">
 				{{ btnTxt }}
 			</a>
