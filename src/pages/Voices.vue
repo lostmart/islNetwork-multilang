@@ -17,6 +17,9 @@ export default {
 				{
 					id: "901933889", title: "Cierre del año"
 				},
+				{
+					id: "1069169100", title: "Charla Godparents Project y Centro Voluntariado Uruguay"
+				}
 			],
 			height: "auto",
 			width: "370",
@@ -46,8 +49,8 @@ export default {
 		<h2 class="text-center">Voces</h2>
 		<div class="card">
 			<div v-for="id in vimeos_ids" :key="id.id" class="card-body text-center">
-				<vimeo-player ref="player" :video-id="id.id" :player-width="width"
-					class="video_player" @ready="onReady" />
+				<vimeo-player ref="player" :video-id="id.id" :player-width="width" class="video_player"
+					@ready="onReady" />
 			</div>
 		</div>
 	</div>
