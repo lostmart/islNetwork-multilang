@@ -17,6 +17,9 @@ export default {
 				{
 					id: "901933889", title: "Cierre del año"
 				},
+				{
+					id: "1079419875", title: "Reunión abril 2025"
+				}
 			],
 			height: "auto",
 			width: "370",
