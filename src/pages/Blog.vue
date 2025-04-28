@@ -76,9 +76,9 @@ async function bringmedia(dataUrl, index) {
 const setPageLang = (callback) => {
     if (localStorage.getItem('lang') === 'sp') {
         // old rest api POSTS_URL.value = `https://islbackoffice.devmartin.site/wp-json/wp/v2/posts?categories=7`
-        POSTS_URL.value = `http://isl-blog.great-site.net/index.php?rest_route=/wp/v2/posts`
+        POSTS_URL.value = `https://magenta-fox-373734.hostingersite.com/wp-json/wp/v2/posts`
     } else {
-        POSTS_URL.value = `http://isl-blog.great-site.net/index.php?rest_route=/wp/v2/posts`
+        POSTS_URL.value = `https://magenta-fox-373734.hostingersite.com/wp-json/wp/v2/posts`
     }
     callback()
 }
