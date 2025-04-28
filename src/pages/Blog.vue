@@ -18,7 +18,11 @@ const postsArray = ref([])
 async function fetchPosts() {
     loading.value = true
     try {
-        const res = await fetch(POSTS_URL.value)
+        const res = await fetch(POSTS_URL.value, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
         if (!res.ok) {
             error.value = true
             loading.value = false
@@ -71,9 +75,10 @@ async function bringmedia(dataUrl, index) {
 
 const setPageLang = (callback) => {
     if (localStorage.getItem('lang') === 'sp') {
-        POSTS_URL.value = `https://islbackoffice.devmartin.site/wp-json/wp/v2/posts?categories=7`
+        // old rest api POSTS_URL.value = `https://islbackoffice.devmartin.site/wp-json/wp/v2/posts?categories=7`
+        POSTS_URL.value = `http://isl-blog.great-site.net/index.php?rest_route=/wp/v2/posts`
     } else {
-        POSTS_URL.value = `https://islbackoffice.devmartin.site/wp-json/wp/v2/posts?categories=8`
+        POSTS_URL.value = `http://isl-blog.great-site.net/index.php?rest_route=/wp/v2/posts`
     }
     callback()
 }
