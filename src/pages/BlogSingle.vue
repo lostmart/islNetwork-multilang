@@ -1,8 +1,9 @@
 <script setup>
-import { ref, onMounted  } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
-const BASE_URL = "https://islbackoffice.devmartin.site/"; 
+// const BASE_URL = "https://islbackoffice.devmartin.site/";
+const BASE_URL = "https://magenta-fox-373734.hostingersite.com/"
 
 const route = useRoute()
 
@@ -16,15 +17,15 @@ const postId = ref(null)
 const featuredMedia = ref(null)
 
 
-const formatDate = (dateString )=>{
-    const date = new Date(dateString);
-    
+const formatDate = (dateString) => {
+    const date = new Date(dateString)
+
     // Format the date in a human-readable form
     const readableDate = date.toLocaleDateString("en-US", {
         year: 'numeric', // e.g., 2024
         month: 'long', // e.g., May
         day: 'numeric', // e.g., 6
-    });
+    })
     publishDate.value = readableDate
 
 }
@@ -33,62 +34,62 @@ const formatDate = (dateString )=>{
 async function fetchSinglePost(POST_URL) {
     loading.value = true
     try {
-        const res = await fetch(POST_URL);
+        const res = await fetch(POST_URL)
         // console.log(res.status);
-        if(res.status === 404){
+        if (res.status === 404) {
             error.value = "Post not found..."
-            throw new Error("Post not found...");
+            throw new Error("Post not found...")
         }
-        if (!res.ok) { 
+        if (!res.ok) {
             error.value = `HTTP error! status: ${res.status}`
             loading.value = false
-            throw new Error(`HTTP error! status: ${res.status}`);
+            throw new Error(`HTTP error! status: ${res.status}`)
         }
-        const data = await res.json();
+        const data = await res.json()
         // console.log(data);
         postData.value = data
         loading.value = false
         formatDate(data.date)
         // si  no tiene featured_image le damos un dummy placeholder
-        if(data.featured_media==0){
+        if (data.featured_media == 0) {
             return featuredMedia.value = "/team/placeholder-image.webp"
         }
         // const POSTS_URL = "https://islbackoffice.devmartin.site/wp-json/wp/v2/posts";
 
-        
+
 
         bringFeatured_media(`${BASE_URL}/wp-json/wp/v2/media/${data.featured_media}`)
         //console.log(data);
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching posts:', error)
         error.value = error
         loading.value = false
     }
 }
 
-async function bringFeatured_media(dataUrl){
-    try{
+async function bringFeatured_media(dataUrl) {
+    try {
         const mediaRes = await fetch(dataUrl)
-        if (!mediaRes.ok) { 
-            throw new Error(`HTTP error! status: ${mediaRes.status}`);
+        if (!mediaRes.ok) {
+            throw new Error(`HTTP error! status: ${mediaRes.status}`)
         }
         const mediaData = await mediaRes.json()
         featuredMedia.value = mediaData.source_url
         console.log(mediaData.source_url)
-    }catch (error) {
-        console.error('Error fetching media:', error);
+    } catch (error) {
+        console.error('Error fetching media:', error)
 
     }
 }
 
-onMounted(()=>{
-    
-    postId.value=route.params.id
+onMounted(() => {
+
+    postId.value = route.params.id
     // console.log(postId.value);
 
-    const SINGLE_POST_URL = `${BASE_URL}/wp-json/wp/v2/posts/${postId.value}`;
+    const SINGLE_POST_URL = `${BASE_URL}/wp-json/wp/v2/posts/${postId.value}`
     fetchSinglePost(SINGLE_POST_URL)
-} 
+}
 )
 
 
@@ -99,9 +100,9 @@ onMounted(()=>{
         <img class="not-found" src="/team/404.png" alt="not found error" />
     </article>
     <div v-if="loading" class="alert alert-info" role="alert">
-       loading ...
+        loading ...
     </div>
-    <article v-if="postData" class="m-2 p-2">        
+    <article v-if="postData" class="m-2 p-2">
         <figure>
             <img :src="featuredMedia" :alt="postData.title.rendered">
             <figcaption>
@@ -109,7 +110,7 @@ onMounted(()=>{
             </figcaption>
         </figure>
 
-        
+
         <div v-html="postData.content.rendered"></div>
         <div class=" m-4 text-end blockquote-footer">{{ publishDate }}</div>
         <hr>
@@ -125,30 +126,31 @@ onMounted(()=>{
 
 
 <style scoped>
-
-.error-art{
+.error-art {
     height: 63dvh;
 }
 
-.not-found{
-    max-width:300px;
-    display:block;
+.not-found {
+    max-width: 300px;
+    display: block;
     margin: auto;
 }
 
-h2{
+h2 {
     font-size: 7dvw;
     text-align: center;
 }
-figure{
+
+figure {
 
     position: relative;
 }
 
-img{
+img {
     width: 100%;
 }
-figcaption h2{
+
+figcaption h2 {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -157,12 +159,12 @@ figcaption h2{
     text-shadow: 1px 1px 2px white;
 }
 
-figcaption h2:before{
+figcaption h2:before {
     content: '';
     position: absolute;
     left: 0;
     background: #418bd01c;
-    background: linear-gradient(180deg, rgb(65 139 208 / 0%) 0%, rgb(116 161 203 / 62%) 100%); 
+    background: linear-gradient(180deg, rgb(65 139 208 / 0%) 0%, rgb(116 161 203 / 62%) 100%);
     width: 100%;
     height: 88%;
     z-index: -1;
@@ -170,7 +172,4 @@ figcaption h2:before{
     bottom: -8px;
     opacity: 0.9;
 }
-
 </style>
-
-
