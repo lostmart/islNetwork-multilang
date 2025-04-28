@@ -17,6 +17,9 @@ export default {
 				{
 					id: "901933889", title: "Cierre del año"
 				},
+				{
+					id: "1079419875", title: "Reunión abril 2025"
+				}
 			],
 			height: "auto",
 			width: "370",
@@ -46,8 +49,8 @@ export default {
 		<h2 class="text-center">Voces</h2>
 		<div class="card">
 			<div v-for="id in vimeos_ids" :key="id.id" class="card-body text-center">
-				<vimeo-player ref="player" :video-id="id.id" :player-width="width"
-					class="video_player" @ready="onReady" />
+				<vimeo-player ref="player" :video-id="id.id" :player-width="width" class="video_player"
+					@ready="onReady" />
 			</div>
 		</div>
 	</div>
@@ -59,7 +62,7 @@ export default {
 }
 
 .video_player {
-	max-height: 220px;
+	max-height: 280px;
 	max-width: 100%;
 }
 </style>
