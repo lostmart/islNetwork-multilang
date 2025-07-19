@@ -22,6 +22,9 @@ export default {
 				},
 				{
 					id: "1091140033", title: "Herramientas Para Trabajat Online"
+				},
+				{
+					id: "1102723652", title: "Cocinando en inglés"
 				}
 			],
 			height: "auto",
