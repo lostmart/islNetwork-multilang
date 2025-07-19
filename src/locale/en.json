@@ -89,20 +89,6 @@
 				"linkedIn": "https://www.linkedin.com/in/mar%C3%ADa-elena-schnyder-33b98362/",
 				"imgUrl": "ma-elena-schnyder.jpg",
 				"rol": "referent"
-			},
-			{
-				"userName": "Virginia Frade",
-				"description": "Maldonado reference",
-				"linkedIn": null,
-				"imgUrl": "Virginia-Frade.jpg",
-				"rol": "referent"
-			},
-			{
-				"userName": "Cecilia Cabrera Frade",
-				"description": "Florida and Durazno reference",
-				"linkedIn": "https://www.linkedin.com/in/ceciliacabreramartirena/",
-				"imgUrl": "cecilia-cabrera.jpg",
-				"rol": "referent"
 			}
 		]
 	},
