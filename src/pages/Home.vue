@@ -5,6 +5,7 @@ import { useStore } from 'vuex'
 /*  locales  */
 import engTxt from '../locale/en.json'
 import spanishTxt from '../locale/sp.json'
+import NewsFeed from '../components/NewsFeed.vue'
 
 const descrption = ref(null)
 const btnTxt = ref(null)
@@ -47,15 +48,16 @@ onMounted(() => {
 		<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
 		<div class="col-lg-6">
 			<p v-html="descrption"></p>
-			<a class="btn btn-lg btn-primary my-5 d-block mx-auto w-50"
+			<a class="btn btn-lg btn-primary my-4 d-block mx-auto w-50"
 				href="https://docs.google.com/forms/d/e/1FAIpQLSe8VSDWwS83qQBVjqY9t1pLzoggbC82IVRagmmxk4km_aaEDg/viewform"
 				target="_blank">
 				{{ btnTxt }}
 			</a>
-			<a class="btn btn-lg btn-success my-5 d-block mx-auto w-50" href="https://gofund.me/8926b9c2"
+			<a class="btn btn-lg btn-success my-4 d-block mx-auto w-50" href="https://gofund.me/8926b9c2"
 				target="_blank">
 				{{ donateBtnTxt }}
 			</a>
+
 		</div>
 		<div class="col-lg-6 col-md-12 d-flex align-items-center flex-column">
 			<img src="../assets/images/Distribucion-mundial-2024.png" alt="godparents around the world" />
@@ -65,6 +67,9 @@ onMounted(() => {
 					alt="kaplan logo" />
 			</figure>
 		</div>
+	</div>
+	<div>
+		<NewsFeed />
 	</div>
 </template>
 
