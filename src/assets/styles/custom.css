@@ -1,16 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
 :root {
 	--prim-clr: #418bd0;
 	--accent: #ed8f15;
 	--accent-two: #159a49;
+	--light: #EFEFEF;
+}
+
+* {
+	font-family: "Instrument Sans", sans-serif;
 }
 
 .main-container {
-	min-height: 53vh;
+	min-height: 55vh;
 }
 
 .container h1 {
-	color: var(--prim-clr);
-	font-family: impact;
+	color: var(--light);
+	font-family: "Instrument Sans", sans-serif;
 }
 
 .card {

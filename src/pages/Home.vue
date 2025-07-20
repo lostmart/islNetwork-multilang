@@ -44,78 +44,151 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="row">
-		<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
-		<div class="col-lg-6">
-			<p v-html="descrption"></p>
-			<a class="btn btn-lg btn-primary my-4 d-block mx-auto w-50"
-				href="https://docs.google.com/forms/d/e/1FAIpQLSe8VSDWwS83qQBVjqY9t1pLzoggbC82IVRagmmxk4km_aaEDg/viewform"
-				target="_blank">
-				{{ btnTxt }}
-			</a>
-			<a class="btn btn-lg btn-success my-4 d-block mx-auto w-50" href="https://gofund.me/8926b9c2"
-				target="_blank">
-				{{ donateBtnTxt }}
-			</a>
+	<section class="home p-0 p-lg-5">
+		<img src="../assets/images/bg-lines.png" alt="bg-lines" class="bg-lines">
+		<div class="container main-container pt-5">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
+					<p v-html="descrption"></p>
+
+					<div class="d-flex flex-column justify-content-center gap-4 flex-md-row mt-4">
+						<a href="" class="btn d-block mx-auto w-50 text-white join">{{ btnTxt }}</a>
+						<a href="" class="btn btn-primary d-block mx-auto w-50 donate">{{ donateBtnTxt }}</a>
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 p-4">
+					<img class="img-fluid" src="../assets/images/Distribucion-mundial-2025.png" alt="god parrents logo">
+				</div>
+
+			</div>
 
 		</div>
-		<div class="col-lg-6 col-md-12 d-flex align-items-center flex-column">
-			<img src="../assets/images/Distribucion-mundial-2024.png" alt="godparents around the world" />
-			<figure class="d-flex flex-column align-items-center m-2">
-				<figcaption>In partnership with</figcaption>
-				<img class="kaplan-logo" src="../assets/images//Kaplan-International-Languages-Logo.png"
-					alt="kaplan logo" />
-			</figure>
+
+	</section>
+	<section class="kaplan">
+		<div class="container main-container pt-5">
+
+			<div class="row">
+				<div class="col-lg-6 p-4 positioin-relative d-flex align-items-center h-full">
+
+					<img class="img-fluid position-relative z-1"
+						src="../assets/images/Kaplan-International-Languages-Logo.png" alt="kaplan internacional logo">
+				</div>
+				<div class="col-lg-6 p-2 positioin-relative d-flex align-items-center h-full">
+
+					<div class="orange-box"></div>
+					<div class="position-relative blue-box">
+						<h3>Los de Kaplan
+							nos dan terrible mano !</h3>
+						<p>Gente muy macanuda !! 🏅</p>
+					</div>
+
+				</div>
+			</div>
 		</div>
-	</div>
-	<div>
-		<NewsFeed />
-	</div>
+	</section>
+
+	<section class="newsFeed p-4">
+		<h3 class="m-4">News Feed</h3>
+		<div
+			class="container main-container d-flex gap-4 flex-column justify-content-center align-items-center mb-5 flex-md-row jutify-content-md-center alig">
+			<NewsFeed />
+			<NewsFeed />
+			<NewsFeed />
+		</div>
+
+	</section>
 </template>
 
 <style scoped>
-figcaption {
-	font-family: system-ui;
-	color: #240f6e;
-	font-size: .8em;
+.home {
+	background-color: var(--prim-clr);
 }
 
-img {
-	width: 100%;
+.home .bg-lines {
+	mix-blend-mode: color-dodge;
+	position: absolute;
+	width: 100dvw;
+	inset: 0;
+	opacity: 0.4;
 }
 
-.kaplan-logo {
-	max-width: 260px;
+.home h1 {
+	font-weight: normal;
+	font-size: 52px;
+	max-width: 540px;
 }
 
-.card {
+.home p {
+	color: var(--light);
+	margin-top: 1em;
+	line-height: 2;
+}
+
+.home .join {
+	background-color: var(--accent);
+	border-radius: 0;
+	max-width: 204px;
+	font-weight: 600;
+}
+
+.home .donate {
+	background-color: var(--light);
+	color: var(--prim-clr);
+	border-radius: 0;
+	max-width: 204px;
+	font-weight: 600;
+
+}
+
+.kaplan {
 	position: relative;
-	min-height: 400px;
-	border: transparent !important;
+	max-width: 1140px;
+	margin: auto;
 }
 
-.card .card-title {
-	font-size: 2.2rem;
-	text-shadow: 1px 2px grey;
-	z-index: 1;
-	text-align: center;
+.kaplan .row {
+	min-height: 550px;
 }
 
-.card .card-text {
-	font-size: 1.2rem;
+.kaplan h3 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
-.card .eng {
-	top: 22rem !important;
-}
-
-@media (min-width: 768px) {
-	.card .card-title {
-		font-size: 2.9rem;
+@media screen and (min-width: 992px) {
+	.kaplan h3 {
+		font-size: 48px;
+		font-weight: bold;
 	}
 }
 
-.btn-primary {
-	min-width: fit-content;
+.orange-box {
+	background-color: var(--accent);
+	height: 562px;
+	width: 268px;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+}
+
+.blue-box {
+	background-color: var(--prim-clr);
+	color: var(--light);
+	padding: 2em 1em;
+	max-width: 570px;
+}
+
+.newsFeed {
+	background-color: var(--prim-clr);
+}
+
+.newsFeed h3 {
+	color: var(--light);
+	font-size: 48px;
+	font-weight: bold;
 }
 </style>
