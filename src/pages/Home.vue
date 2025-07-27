@@ -1,56 +1,62 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, computed } from 'vue'
 import { useStore } from 'vuex'
-
-/*  locales  */
-import engTxt from '../locale/en.json'
-import spanishTxt from '../locale/sp.json'
+import axios from 'axios'
 import NewsFeed from '../components/NewsFeed.vue'
 
-const descrption = ref(null)
-const btnTxt = ref(null)
-const donateBtnTxt = ref(null)
+// Content variables
+const description = ref('')
+const donateBtnTxt = ref('')
+const homeTitle = ref('')
+const btnTxt = ref('') // assuming this stays static or could be added to ACF later
+
 const store = useStore()
 
-// Watch for changes in the store state siteLang
-watch(
-	() => store.state.siteLang,
-	() => {
-		setPageLang()
-	}
-)
+const lang = ref(localStorage.getItem('lang') || 'en')
 
-/**
- * Sets the page language based on the value stored in localStorage.
- * If the language is set to 'sp', => Spanish
- * If the language is set to 'en', => English
- * @returns {void}
- */
-const setPageLang = () => {
-	if (localStorage.getItem('lang') === 'sp') {
-		descrption.value = spanishTxt.home.description
-		btnTxt.value = spanishTxt.about.btnTxt
-		donateBtnTxt.value = spanishTxt.home.donateBtn
-	} else if (localStorage.getItem('lang') === 'en') {
-		descrption.value = engTxt.home.description
-		btnTxt.value = engTxt.about.btnTxt
-		donateBtnTxt.value = engTxt.home.donateBtn
+const fetchPageContent = async () => {
+	try {
+		const response = await axios.get('https://magenta-fox-373734.hostingersite.com/wp-json/wp/v2/pages?slug=home')
+		const page = response.data[0]
+		const acf = page.acf || {}
+
+		// dynamically pick fields
+		description.value = acf[`description_${langKey.value}`] || ''
+		donateBtnTxt.value = acf[`donate_btn_${langKey.value}`] || ''
+		btnTxt.value = lang.value === 'sp' ? 'Unirte' : 'Join Us' // fallback until moved to ACF
+		homeTitle.value = acf[`title_${langKey.value}`] || ''
+	} catch (error) {
+		console.error('Error fetching page content:', error)
 	}
 }
 
+const langKey = computed(() => {
+	return lang.value === 'sp' ? 'es' : 'en'
+})
+
+// Watch language change from Vuex store
+watch(
+	() => store.state.siteLang,
+	() => {
+		lang.value = localStorage.getItem('lang') || 'en'
+		fetchPageContent()
+	}
+)
+
+// Initial fetch
 onMounted(() => {
-	setPageLang()
+	fetchPageContent()
 })
 </script>
 
 <template>
 	<section class="home p-0 p-lg-5">
 		<img src="../assets/images/bg-lines.png" alt="bg-lines" class="bg-lines">
-		<div class="container main-container pt-5">
+		<div class="container main-container pt-5 position-relative">
 			<div class="row">
 				<div class="col-lg-6">
-					<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
-					<p v-html="descrption"></p>
+					<h1 class="card-title mt-4">{{ homeTitle }}</h1>
+					<p v-html="description"></p>
 
 					<div class="d-flex flex-column justify-content-center gap-4 flex-md-row mt-4">
 						<a href="" class="btn d-block mx-auto w-50 text-white join">{{ btnTxt }}</a>
