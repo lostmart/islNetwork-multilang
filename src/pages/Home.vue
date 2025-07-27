@@ -69,26 +69,18 @@ onMounted(() => {
 
 	</section>
 	<section class="kaplan">
-		<div class="container main-container pt-5">
 
-			<div class="row">
-				<div class="col-lg-6 p-4 positioin-relative d-flex align-items-center h-full">
 
-					<img class="img-fluid position-relative z-1"
-						src="../assets/images/Kaplan-International-Languages-Logo.png" alt="kaplan internacional logo">
-				</div>
-				<div class="col-lg-6 p-2 positioin-relative d-flex align-items-center h-full">
 
-					<div class="orange-box"></div>
+		<img class="img-fluid position-relative z-1" src="../assets/images/Kaplan-International-Languages-Logo.png"
+			alt="kaplan internacional logo">
+
+		<!-- <div class="orange-box"></div>
 					<div class="position-relative blue-box">
 						<h3>Los de Kaplan
 							nos dan terrible mano !</h3>
 						<p>Gente muy macanuda !! 🏅</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
+					</div> -->
 	</section>
 
 	<section class="newsFeed p-4">
@@ -148,22 +140,15 @@ onMounted(() => {
 	position: relative;
 	max-width: 1140px;
 	margin: auto;
+	padding: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.kaplan .row {
-	min-height: 550px;
-}
-
-.kaplan h3 {
-	font-size: 35px;
-	font-weight: bold;
-}
-
-@media screen and (min-width: 992px) {
-	.kaplan h3 {
-		font-size: 48px;
-		font-weight: bold;
-	}
+.kaplan img {
+	width: 100%;
+	max-width: 480px;
 }
 
 .orange-box {
