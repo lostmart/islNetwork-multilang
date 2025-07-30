@@ -26,6 +26,7 @@ onMounted(async () => {
             content: item.content.rendered || '',
             image: item.acf?.thumbnail || '',
             link: item.acf?.link,
+            date: item.acf?.date
         }))
     } catch (error) {
         console.error('Failed to fetch news:', error)
@@ -46,7 +47,7 @@ onMounted(async () => {
         <div v-else
             class="d-flex gap-4 flex-column justify-content-center align-items-center mb-5 flex-md-row justify-content-md-center">
             <NewsFeed v-for="news in newsList" :key="news.id" :title="news.title" :summary="news.summary"
-                :image="news.image" :link="news.link" />
+                :date="news.date" :image="news.image" :link="news.link" />
         </div>
     </div>
 </template>

@@ -3,7 +3,7 @@ defineProps({
 	title: String,
 	date: String,
 	link: String,
-	image: String // optional
+	image: String
 })
 </script>
 
@@ -24,8 +24,12 @@ defineProps({
 	max-width: 314px;
 	padding: 1em;
 	display: block;
+	min-width: 305px;
 }
 
+.news .text-muted {
+	font-size: .8em;
+}
 
 
 a {
