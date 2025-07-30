@@ -1,24 +1,21 @@
+<script setup>
+defineProps({
+	title: String,
+	date: String,
+	link: String,
+	image: String // optional
+})
+</script>
+
 <template>
-
-
-	<a href="https://www.gub.uy/presidencia/comunicacion/noticias/alumno-escuela-rural-florida-obtuvo-primer-lugar-concurso-internacional"
-		target="_blank" rel="noopener noreferrer" class="news bg-white">
+	<a :href="link" target="_blank" rel="noopener noreferrer" class="news bg-white">
 		<article class="d-flex flex-column">
-
-			<img src="https://medios.presidencia.gub.uy/tav_portal/2025/noticias/AN_823/fgr_05.jpg" alt="news feed"
-				class="img-fluid">
-			<h4>Alumno de escuela rural de Florida</h4>
-			<span class="text-muted text-end">23 de Julio, 2025</span>
+			<img :src="image" alt="news feed" class="img-fluid" />
+			<h4>{{ title }}</h4>
+			<span class="text-muted text-end">{{ date }}</span>
 		</article>
 	</a>
-
 </template>
-<script>
-export default {
-	name: 'NewsFeed',
-
-}
-</script>
 
 
 
@@ -38,6 +35,8 @@ a {
 
 img {
 	transition: all 250ms ease-in-out;
+	max-height: 140px;
+	object-fit: cover;
 }
 
 a:hover img {

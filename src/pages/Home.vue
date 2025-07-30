@@ -2,13 +2,14 @@
 import { ref, onMounted, watch, computed } from 'vue'
 import { useStore } from 'vuex'
 import axios from 'axios'
-import NewsFeed from '../components/NewsFeed.vue'
+import NewsFeedList from '../components/NewsFeedList.vue'
 
 // Content variables
 const description = ref('')
 const donateBtnTxt = ref('')
 const homeTitle = ref('')
-const btnTxt = ref('') // assuming this stays static or could be added to ACF later
+const btnTxt = ref('') // Could be added to ACF later
+const newsFeedTitle = ref('')
 
 const store = useStore()
 
@@ -25,6 +26,7 @@ const fetchPageContent = async () => {
 		donateBtnTxt.value = acf[`donate_btn_${langKey.value}`] || ''
 		btnTxt.value = lang.value === 'sp' ? 'Unirte' : 'Join Us' // fallback until moved to ACF
 		homeTitle.value = acf[`title_${langKey.value}`] || ''
+		newsFeedTitle.value = acf[`news_${langKey.value}`] || 'Noticias'
 	} catch (error) {
 		console.error('Error fetching page content:', error)
 	}
@@ -90,13 +92,8 @@ onMounted(() => {
 	</section>
 
 	<section class="newsFeed p-4">
-		<h3 class="m-4">News Feed</h3>
-		<div
-			class="container main-container d-flex gap-4 flex-column justify-content-center align-items-center mb-5 flex-md-row jutify-content-md-center alig">
-			<NewsFeed />
-			<NewsFeed />
-			<NewsFeed />
-		</div>
+		<h3 class="m-4">{{ newsFeedTitle }}</h3>
+		<NewsFeedList />
 
 	</section>
 </template>
