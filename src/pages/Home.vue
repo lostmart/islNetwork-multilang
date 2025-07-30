@@ -76,6 +76,13 @@ onMounted(() => {
 		</div>
 
 	</section>
+
+	<section class="newsFeed p-4">
+		<h3 class="m-4">{{ newsFeedTitle }}</h3>
+		<NewsFeedList />
+
+	</section>
+
 	<section class="kaplan">
 
 
@@ -89,12 +96,6 @@ onMounted(() => {
 							nos dan terrible mano !</h3>
 						<p>Gente muy macanuda !! 🏅</p>
 					</div> -->
-	</section>
-
-	<section class="newsFeed p-4">
-		<h3 class="m-4">{{ newsFeedTitle }}</h3>
-		<NewsFeedList />
-
 	</section>
 </template>
 
@@ -151,7 +152,8 @@ onMounted(() => {
 
 .kaplan img {
 	width: 100%;
-	max-width: 480px;
+	max-width: 250px;
+	opacity: 0.8;
 }
 
 .orange-box {
