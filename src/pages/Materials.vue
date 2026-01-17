@@ -129,12 +129,12 @@ export default {
 					link: "https://drive.google.com/file/d/1sp8ZLhG8BSKDpWUEP85RwRA1FsGSf_jz/view?usp=sharing",
 				},
 				{
-					title: "ISL Handbook",
-					link: "https://drive.google.com/file/d/1vQzN5iMMdgZGzB508TuFORcrysphgx-m/view?usp=sharing",
+					title: "Guía para docentes ISL 2026",
+					link: "https://drive.google.com/file/d/1VSZoa0cNHAqTpjvdkk4LP7eYa3Q9gv-c/view?usp=sharing",
 				},
 				{
-					title: "2026 - ISL Teacher's Guide",
-					link: "https://drive.google.com/file/d/1u6r9bX6K8k2b0bX1Z5n2r3F7yW8Jz3I2/view?usp=sharing",
+					title: "ISL students' Handbook",
+					link: "https://drive.google.com/file/d/1vQzN5iMMdgZGzB508TuFORcrysphgx-m/edit",
 				},
 			],
 			cogin: "Gdp2019",
