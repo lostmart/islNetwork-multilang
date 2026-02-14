@@ -1,11 +1,11 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue'
-import { useStore } from 'vuex'
+import { ref, onMounted, watch } from "vue"
+import { useStore } from "vuex"
 
 /*  locales  */
-import engTxt from '../locale/en.json'
-import spanishTxt from '../locale/sp.json'
-import NewsFeed from '../components/NewsFeed.vue'
+import engTxt from "../locale/en.json"
+import spanishTxt from "../locale/sp.json"
+import NewsFeed from "../components/NewsFeed.vue"
 
 const descrption = ref(null)
 const btnTxt = ref(null)
@@ -17,7 +17,7 @@ watch(
 	() => store.state.siteLang,
 	() => {
 		setPageLang()
-	}
+	},
 )
 
 /**
@@ -27,11 +27,11 @@ watch(
  * @returns {void}
  */
 const setPageLang = () => {
-	if (localStorage.getItem('lang') === 'sp') {
+	if (localStorage.getItem("lang") === "sp") {
 		descrption.value = spanishTxt.home.description
 		btnTxt.value = spanishTxt.about.btnTxt
 		donateBtnTxt.value = spanishTxt.home.donateBtn
-	} else if (localStorage.getItem('lang') === 'en') {
+	} else if (localStorage.getItem("lang") === "en") {
 		descrption.value = engTxt.home.description
 		btnTxt.value = engTxt.about.btnTxt
 		donateBtnTxt.value = engTxt.home.donateBtn
@@ -48,23 +48,33 @@ onMounted(() => {
 		<h1 class="card-title mt-4">Godparents Network Uruguay</h1>
 		<div class="col-lg-6">
 			<p v-html="descrption"></p>
-			<a class="btn btn-lg btn-primary my-4 d-block mx-auto w-50"
-				href="https://docs.google.com/forms/d/e/1FAIpQLSe8VSDWwS83qQBVjqY9t1pLzoggbC82IVRagmmxk4km_aaEDg/viewform"
-				target="_blank">
+			<a
+				class="btn btn-lg btn-primary my-4 d-block mx-auto w-50"
+				href="https://forms.gle/DYD8wWDsbNzx9qoi9"
+				target="_blank"
+			>
 				{{ btnTxt }}
 			</a>
-			<a class="btn btn-lg btn-success my-4 d-block mx-auto w-50" href="https://gofund.me/8926b9c2"
-				target="_blank">
+			<a
+				class="btn btn-lg btn-success my-4 d-block mx-auto w-50"
+				href="https://gofund.me/8926b9c2"
+				target="_blank"
+			>
 				{{ donateBtnTxt }}
 			</a>
-
 		</div>
 		<div class="col-lg-6 col-md-12 d-flex align-items-center flex-column">
-			<img src="../assets/images/Distribucion-mundial-2024.png" alt="godparents around the world" />
+			<img
+				src="../assets/images/Distribucion-mundial-2024.png"
+				alt="godparents around the world"
+			/>
 			<figure class="d-flex flex-column align-items-center m-2">
 				<figcaption>In partnership with</figcaption>
-				<img class="kaplan-logo" src="../assets/images//Kaplan-International-Languages-Logo.png"
-					alt="kaplan logo" />
+				<img
+					class="kaplan-logo"
+					src="../assets/images//Kaplan-International-Languages-Logo.png"
+					alt="kaplan logo"
+				/>
 			</figure>
 		</div>
 	</div>
@@ -77,7 +87,7 @@ onMounted(() => {
 figcaption {
 	font-family: system-ui;
 	color: #240f6e;
-	font-size: .8em;
+	font-size: 0.8em;
 }
 
 img {
