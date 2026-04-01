@@ -42,39 +42,19 @@ onMounted(() => {
 		<h2 class="text-center mt-4">{{ materials.title }}</h2>
 		<div v-if="show" class="p-4">
 			<div class="list-group mx-auto">
-				<a
-					target="_blank"
-					v-for="book in books"
-					:key="book.link"
-					:href="book.link"
-					class="list-group-item list-group-item-action text-center"
-					aria-current="true"
-				>
+				<a target="_blank" v-for="book in books" :key="book.link" :href="book.link"
+					class="list-group-item list-group-item-action text-center" aria-current="true">
 					{{ book.title }}
 				</a>
 			</div>
 		</div>
 		<div v-else>
 			<h3 class="text-center mt-4">{{ materials.subTitle }}</h3>
-			<form
-				ref="formPass"
-				class="mx-auto bg-primary p-4"
-				@submit.prevent="handleSubmit"
-			>
+			<form ref="formPass" class="mx-auto bg-primary p-4" @submit.prevent="handleSubmit">
 				<label for="inputPassword" class="form-label mb-3">Password</label>
 				<div class="input-group mb-3">
-					<input
-						:type="inputType"
-						class="form-control"
-						id="inputPassword"
-						v-model="input"
-					/>
-					<button
-						class="btn btn-light"
-						type="button"
-						id="button-addon2"
-						@click="togglePassVis"
-					>
+					<input :type="inputType" class="form-control" id="inputPassword" v-model="input" />
+					<button class="btn btn-light" type="button" id="button-addon2" @click="togglePassVis">
 						<i v-if="!passShw" class="far fa-eye-slash"></i>
 						<i v-else class="far fa-eye"></i>
 					</button>
@@ -136,6 +116,10 @@ export default {
 					title: "ISL students' Handbook",
 					link: "https://drive.google.com/file/d/1vQzN5iMMdgZGzB508TuFORcrysphgx-m/edit",
 				},
+				{
+					title: "Students' Handbook 2026",
+					link: "https://simplebooklet.com/revisionlibroao3inglessin#page=1",
+				}
 			],
 			cogin: "Gdp2019",
 			show: false,
