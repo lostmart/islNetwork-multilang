@@ -74,11 +74,11 @@ export default {
 			books: [
 				{
 					title: "Libro Uno",
-					link: "https://www.dropbox.com/s/gbklb3ue6m6tj1q/ISL%20LIBRO%201.pdf?dl=0",
+					link: "https://drive.google.com/file/d/1kdizkngXHQ8lXtrtE0eAd76lR9FEtP9-/view?usp=sharing",
 				},
 				{
 					title: "Libro Dos",
-					link: "https://www.dropbox.com/s/w5jz532z4c5m600/ISL%20BOOK%202.pdf?dl=0",
+					link: "https://drive.google.com/file/d/1QUYvWYnoqyldiAXlxSSTmbX4m_l9vVVi/view?usp=sharing",
 				},
 				{
 					title: "Flashcards",
@@ -90,7 +90,7 @@ export default {
 				},
 				{
 					title: "Youtube playlist",
-					link: "https://www.youtube.com/playlist?list=PLtupDLnojS6s_LeuiI141CCc8fctt1fgZ",
+					link: "https://youtube.com/playlist?list=PLtupDLnojS6tUFPQfGV60ub0ryCafPKZ0&si=mFG5VnQkaQnbl84E",
 				},
 				{
 					title: "Otros / Misc",
@@ -110,7 +110,7 @@ export default {
 				},
 				{
 					title: "Guía para docentes ISL 2026",
-					link: "https://drive.google.com/file/d/1VSZoa0cNHAqTpjvdkk4LP7eYa3Q9gv-c/view?usp=sharing",
+					link: "https://drive.google.com/file/d/1VSZoa0cNHAqTpjvdkk4LP7eYa3Q9gv-c/view",
 				},
 				{
 					title: "ISL students' Handbook",
