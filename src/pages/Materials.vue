@@ -78,10 +78,7 @@ export default {
 		}
 	},
 	methods: {
-		async mounted() {
-			const res = await fetch("https://script.google.com/macros/s/AKfycbyTRvYx5xDFborUn7Rjz55LdCkSaj6R1vE1-rKm7CU5D75cSu0HWQStqiZFcUhUnCsKJQ/exec")
-			this.books = await res.json()
-		},
+
 		handleSubmit() {
 			this.input === this.cogin ? (this.show = true) : this.handleError()
 		},
@@ -95,6 +92,14 @@ export default {
 		togglePassVis() {
 			this.passShw = !this.passShw
 		},
+	},
+	async mounted() {
+		try {
+			const res = await fetch("https://script.google.com/macros/s/AKfycbyTRvYx5xDFborUn7Rjz55LdCkSaj6R1vE1-rKm7CU5D75cSu0HWQStqiZFcUhUnCsKJQ/exec")
+			this.books = await res.json()
+		} catch (err) {
+			console.error("Failed to fetch materials:", err)
+		}
 	},
 	computed: {
 		inputType: function () {
