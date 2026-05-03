@@ -70,7 +70,7 @@ export default {
 	name: "materials",
 	data() {
 		return {
-			books: [], // remove hardcoded array
+			books: [],
 			cogin: "Gdp2019",
 			show: false,
 			input: "",
