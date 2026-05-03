@@ -70,57 +70,7 @@ export default {
 	name: "materials",
 	data() {
 		return {
-			title: "ISL network | materiales",
-			books: [
-				{
-					title: "Libro Uno",
-					link: "https://drive.google.com/file/d/1kdizkngXHQ8lXtrtE0eAd76lR9FEtP9-/view?usp=sharing",
-				},
-				{
-					title: "Libro Dos",
-					link: "https://drive.google.com/file/d/1QUYvWYnoqyldiAXlxSSTmbX4m_l9vVVi/view?usp=sharing",
-				},
-				{
-					title: "Flashcards",
-					link: "https://www.dropbox.com/s/muz5zyfwxq9dme5/Flashcards%20ISL%20A%C3%91O%201%202022.pdf?dl=0",
-				},
-				{
-					title: "Flashcards II",
-					link: "https://www.dropbox.com/s/pip7qlpfksthqy5/ISL%20Flashcards%20A%C3%91O%202.pdf?dl=0",
-				},
-				{
-					title: "Youtube playlist",
-					link: "https://youtube.com/playlist?list=PLtupDLnojS6tUFPQfGV60ub0ryCafPKZ0&si=mFG5VnQkaQnbl84E",
-				},
-				{
-					title: "Otros / Misc",
-					link: "https://drive.google.com/drive/folders/1q38CqBHNcmWGmfHCpgXHYWIfWtfFnlhH",
-				},
-				{
-					title: "Material de Teatro",
-					link: "https://drive.google.com/drive/folders/11Boynko1i_awmNOWfoahLERCmAatkkJH?usp=sharing",
-				},
-				{
-					title: "Reunión sobre prueba adaptativa de inglés",
-					link: "https://uic.zoom.us/rec/share/Gy_uPEFWO7_w-id8xE8-bLDLop-BSeO2yQFqKoQc6XJWkOK5jmqoXsOSktXKYvR0.iBgw2Bsas5e0vfWv",
-				},
-				{
-					title: "Mock de prueba adaptativa de inglés",
-					link: "https://drive.google.com/file/d/1sp8ZLhG8BSKDpWUEP85RwRA1FsGSf_jz/view?usp=sharing",
-				},
-				{
-					title: "Guía para docentes ISL 2026",
-					link: "https://drive.google.com/file/d/1VSZoa0cNHAqTpjvdkk4LP7eYa3Q9gv-c/view",
-				},
-				{
-					title: "ISL students' Handbook",
-					link: "https://drive.google.com/file/d/1vQzN5iMMdgZGzB508TuFORcrysphgx-m/edit",
-				},
-				{
-					title: "Students' Handbook 2026",
-					link: "https://simplebooklet.com/revisionlibroao3inglessin#page=1",
-				}
-			],
+			books: [], // remove hardcoded array
 			cogin: "Gdp2019",
 			show: false,
 			input: "",
@@ -128,6 +78,10 @@ export default {
 		}
 	},
 	methods: {
+		async mounted() {
+			const res = await fetch("https://script.google.com/macros/s/AKfycbyTRvYx5xDFborUn7Rjz55LdCkSaj6R1vE1-rKm7CU5D75cSu0HWQStqiZFcUhUnCsKJQ/exec")
+			this.books = await res.json()
+		},
 		handleSubmit() {
 			this.input === this.cogin ? (this.show = true) : this.handleError()
 		},
